@@ -86,7 +86,7 @@ public class DiscordBot {
 			}
 		}
 		
-		JDABuilder bot = JDABuilder.createDefault(token);
+		JDABuilder bot = JDABuilder.create(token, EnumSet.allOf(GatewayIntent.class));
 		
 		// CommandListener
 		bot.addEventListeners(new CommandListener());
@@ -96,9 +96,8 @@ public class DiscordBot {
 		
 		// Register listeners
 		listenerManager.registerListeners();
-		listenerManager.getListeners().forEach((listener) -> bot.addEventListeners(listener));
 		
-		bot.addEventListeners(EnumSet.allOf(GatewayIntent.class));
+		listenerManager.getListeners().forEach((listener) -> bot.addEventListeners(listener));
 		
 		try {
 			jda = bot.build();
