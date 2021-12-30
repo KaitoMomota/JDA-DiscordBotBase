@@ -1,4 +1,4 @@
-package fr.kaitomomota.discordbotbase.core.commands.finder;
+package fr.kaitomomota.discordbotbase.core.commands;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
